@@ -1,24 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TTS Bot</title>
-    <script type="module" src="/main.js" defer></script>
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="styles.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TTS Bot</title>
+        <script type="module" src="/main.js" defer></script>
+    </head>
 
-  <body>
-    <main class="container">
-      <h1>Text to <span>Speak</span></h1>
-      <textarea placeholder="Write anything here..." name="" id=""></textarea>
-      <section class="row">
-        <select>
-          
-        </select>
-        <button>Listen</button>
-      </section>
-    </main>
-    <script src="script.js"></script>
-  </body>
+    <body>
+        <main class="container">
+            <div class="header">
+                <object data="./assets/logo.svg" type="image/svg+xml" class="logo">
+                    <img src="./assets/logo.png" />
+                </object>
+                <h1>Text to <span>Speak</span></h1>
+            </div>
+            <div class="input">
+              <textarea placeholder="Write anything here..." name="" id=""></textarea>
+              <section class="row">
+                  <select></select>
+                  <button>Listen</button>
+              </section>
+            </div>
+            <div class="footer">
+              <p>Written by <a href="https://github.com/slick-coding/text-to-speak" target="_blank">Slick-Coding</a> 😃</p>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
 </html>
