@@ -1,18 +1,27 @@
-const { invoke } = window.__TAURI__.core;
+let speech = new SpeechSynthesisUtterance();
 
-let greetInputEl;
-let greetMsgEl;
+let voices = [];
 
-async function greet() {
-  // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-  greetMsgEl.textContent = await invoke("greet", { name: greetInputEl.value });
+let voiceSelect = document.querySelector("select")
+
+window.speechSynthesis.onvoiceschanged = () => {
+    voices = window.speechSynthesis.getVoices()
+    speech.voice = voices[0]
+    voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)))
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  greetInputEl = document.querySelector("#greet-input");
-  greetMsgEl = document.querySelector("#greet-msg");
-  document.querySelector("#greet-form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    greet();
-  });
+const populateVoices = () => {
+    voices = window.speechSynthesis.getVoices()
+    speech.voice = voices[0]
+    voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)))
+}
+populateVoices()
+
+voiceSelect.addEventListener("change", () => {
+    speech.voice = voices[voiceSelect.value]
+})
+
+document.querySelector("button").addEventListener("click", () => {
+    speech.text = document.querySelector("textarea").value;
+    window.speechSynthesis.speak(speech);
 });
