@@ -1,7 +1,5 @@
-# Tauri + Vanilla
+# Text to Speak
 
-This template should help get you started developing with Tauri in vanilla HTML, CSS and Javascript.
+Hello! Welcome to my Text To Speech (TTS) app. Built using Tauri as the framework to convert this web application into a desktop application.
 
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+Currently, the app is only able to access voices that come default with your OS, as a result it is not able to access any voices when run in a linux system. However it should work fine in Windows!
